@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform-transition</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+      .container
+      {
+        height: 80vh;
+        width: 60%;
+        background-color: rgb(125, 148, 202);
+        border-radius: 15px;
+        position: relative;
+        top: -5vh;
+        left: 20%;
+        display: flex;
+        
+      }
+      .col-1
+      {
+        height: 70vh;
+        width: 50%;
+      }
+      .col-2
+      {
+        height: 25vh;
+        width: 30%;
+        background-color: yellow;
+        text-align: center;
+        border-radius: 12px;
+        position: relative;
+        top: -60vh;
+        left: 130%;
+        font-family: 'Poppins', sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      p
+      {
+        position: relative;
+        top: -5vh;
+      }
+      label
+      {
+        width: 20%;
+      }
+      .label-bg
+      {
+        background-color: rgb(255, 255, 255);
+        display: inline;
+        color: rgb(0, 0, 0);
+        opacity: 0.8; 
+        border-radius: 12px;
+        padding: 5px;
+        
+      }
+      input
+      {
+        margin-bottom: 15px;
+        
+      }
+      .label-bg:is(:hover,:focus)
+      {
+        background-color: #000000;
+        color: white;
+      }
+      #btn-1:checked~.col-2
+      {
+        transform: none;
+        background-color: #fff;
+        transition: ease-in-out 2s;
+      }
+      #btn-2:checked~.col-2
+      {
+        transform:rotate(10deg);
+        transition: ease-in-out 2s;
+      }
+      #btn-3:checked~.col-2
+      {
+        transform:rotate(45deg);
+        transition: ease-in-out 2s;
+      }
+      #btn-4:checked~.col-2
+      {
+        transform:rotateX(100deg);
+        transition: ease-in-out 2s;
+      }
+      #btn-5:checked~.col-2
+      {
+        transform:rotateY(45deg);
+        transition: ease-in-out 2s;
+      }
+      #btn-6:checked~.col-2
+      {
+        transform:rotateY(80deg);
+        transition: ease-in-out 2s;
+      }
+      #btn-7:checked~.col-2
+      {
+        transform: skew(20deg,20deg);
+        transition: ease-in-out 2s;
+      }
+      #btn-8:checked~.col-2
+      {
+        transform: skew(30deg,30deg);
+        transition: ease-in-out 2s;
+      }
+      #btn-9:checked~.col-2
+      {
+        transform: skewX(30deg);
+        transition: ease-in-out 2s;
+      }
+      #btn-10:checked~.col-2
+      {
+        transform: skewY(40deg);
+        transition: ease-in-out 2s;
+      }
+      #btn-11:checked~.col-2
+      {
+        transform: translate(20px,10px);
+        transition: ease-in-out 2s;
+      }
+      #btn-12:checked~.col-2
+      {
+        transform: translate(20px,20px);
+        transition: ease-in-out 2s;
+      }
+      #btn-13:checked~.col-2
+      {
+        transform: scale(2,2);
+        transition: ease-in-out 2s;
+      }
+      #btn-14:checked~.col-2
+      {
+        transform: scale(2,3);
+        transition: ease-in-out 2s;
+      }
+      #btn-15:checked~.col-2
+      {
+        transform: matrix(0.866,0.7,-0.8,0.866,0,0);
+        transition: ease-in-out 2s;
+      }
+      #btn-16:checked~.col-2
+      {
+        transform: matrix(0.586,0.8,-0.8,0.586,0,0);
+        transition: ease-in-out 2s;
+      }
+      #btn-17:checked~.col-2
+      {
+        transform: matrix(0.586,0.8,-0.8,0.586,40,30);
+        transition: ease-in-out 2s;
+      }
+      .col-heading
+      {
+        text-align: center;
+        font-family: 'Poppins', sans-serif;
+        color: blueviolet;
+      }
+      .p
+      {
+        position: relative;
+        top: -3vh;
+      }
+      .p:hover
+      {
+        transform: scale(1.2);
+        letter-spacing: 1px;
+        text-decoration: underline;
+        transition: 2s;
+        color: #000;
+      }
+      h1:is(:hover,:focus)
+      {
+        transform: scale(1.2);
+        letter-spacing: 5px;
+        text-decoration: wavy;
+        transition: 2s;
+        color: #000;
+      }
+    </style>
+</head>
+<body>
+  <div class="col-heading">
+    <h1>CSS transform</h1>
+    <p class="p">Click the property values below to see the result:</p>
+  </div>
+    <div class="container">
+        <div class="col-1">
+          <br>
+          <input type="radio" name="inp-1"  id="btn-1">
+         <div class="label-bg">
+          <label for="btn-1">Transform: none;</label>
+        </div><br>
+        
+        <input type="radio" name="inp-1"  id="btn-2">
+         <div class="label-bg">
+          <label for="btn-2">Transform: rotate(10deg);</label>
+        </div><br>
+
+        <input type="radio" name="inp-1"  id="btn-3">
+        <div class="label-bg">
+         <label for="btn-3">Transform: rotate(45deg);</label>
+       </div><br>
+
+       <input type="radio" name="inp-1"  id="btn-4">
+       <div class="label-bg">
+        <label for="btn-4">Transform: rotateX(100deg);</label>
+      </div><br>
+
+      <input type="radio" name="inp-1"  id="btn-5">
+      <div class="label-bg">
+       <label for="btn-5">Transform: rotateY(45deg);</label>
+     </div><br>
+
+     <input type="radio" name="inp-1"  id="btn-6">
+     <div class="label-bg">
+      <label for="btn-6">Transform: rotateY(80deg);</label>
+    </div><br>
+
+    <input type="radio" name="inp-1"  id="btn-7">
+    <div class="label-bg">
+     <label for="btn-7">Transform: skew(20deg, 20deg);</label>
+   </div><br>
+
+   <input type="radio" name="inp-1"  id="btn-8">
+    <div class="label-bg">
+     <label for="btn-8">Transform: skew(30deg, 30deg);</label>
+   </div><br>
+
+   <input type="radio" name="inp-1"  id="btn-9">
+    <div class="label-bg">
+     <label for="btn-9">Transform: skewX(30deg);</label>
+   </div><br>
+
+   <input type="radio" name="inp-1"  id="btn-10">
+   <div class="label-bg">
+    <label for="btn-10">Transform: skewY(40deg);</label>
+  </div><br>
+
+  <input type="radio" name="inp-1"  id="btn-11">
+  <div class="label-bg">
+   <label for="btn-11">Translate: (20px, 10px);</label>
+ </div><br>
+
+ <input type="radio" name="inp-1"  id="btn-12">
+  <div class="label-bg">
+   <label for="btn-12">Translate: (20px, 20px);</label>
+ </div><br>
+
+ <input type="radio" name="inp-1"  id="btn-13">
+  <div class="label-bg">
+   <label for="btn-13">Transform : scale(2, 2);</label>
+ </div><br>
+
+ <input type="radio" name="inp-1"  id="btn-14">
+  <div class="label-bg">
+   <label for="btn-14">Transform : scale(2, 3);</label>
+ </div><br>
+
+ <input type="radio" name="inp-1"  id="btn-15">
+  <div class="label-bg">
+   <label for="btn-15">Transform : matrix(0.866,0.7,-0.8,0.866,0,0);</label>
+ </div><br>
+
+ <input type="radio" name="inp-1"  id="btn-16">
+  <div class="label-bg">
+   <label for="btn-16">Transform: matrix(0.586,0.8,-0.8,0.586,0,0);</label>
+ </div><br>
+
+ <input type="radio" name="inp-1"  id="btn-17">
+  <div class="label-bg">
+   <label for="btn-17">Transform: matrix(0.586,0.8,-0.8,0.586,40,30);</label>
+ </div><br>
+
+        <div class="col-2">
+          <h2>Hey</h2>
+        <p>Hello guys</p>
+        </div>
+        
+    </div>
+</body>
+</html>
